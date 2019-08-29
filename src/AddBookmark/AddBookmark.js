@@ -1,12 +1,18 @@
 import React, { Component } from  'react';
 import BookmarksContext from '../BookmarksContext';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import config from '../config'
 import './AddBookmark.css';
 
-const Required = () => (
-  <span className='AddBookmark__required'>*</span>
-)
+// class Required extends Component {
+//   render() { 
+//     return ( 
+//       <span className='AddBookmark__required'>*</span>
+//      );
+//   }
+// }
+ 
+// export default Required;
 
 class AddBookmark extends Component {
   
@@ -80,7 +86,7 @@ class AddBookmark extends Component {
             <label htmlFor='title'>
               Title
               {' '}
-              <Required />
+              {/* <Required /> */}
             </label>
             <input
               type='text'
@@ -94,7 +100,7 @@ class AddBookmark extends Component {
             <label htmlFor='url'>
               URL
               {' '}
-              <Required />
+              {/* <Required /> */}
             </label>
             <input
               type='url'
@@ -117,7 +123,7 @@ class AddBookmark extends Component {
             <label htmlFor='rating'>
               Rating
               {' '}
-              <Required />
+              {/* <Required /> */}
             </label>
             <input
               type='number'
@@ -144,4 +150,4 @@ class AddBookmark extends Component {
   }
 }
 
-export default withRouter(AddBookmark);
+export default AddBookmark;

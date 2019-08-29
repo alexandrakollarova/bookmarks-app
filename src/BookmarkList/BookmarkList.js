@@ -8,9 +8,9 @@ class BookmarkList extends Component {
 
   static contextType = BookmarksContext;
 
-  static defaultProps = {
-    bookmarks: []
-    };
+  // static defaultProps = {
+  //   bookmarks: []
+  //   };
 
   render() {
     const { bookmarks } = this.context
