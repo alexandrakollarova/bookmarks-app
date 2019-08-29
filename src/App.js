@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { Route } from 'react-router-dom';
+=======
+import {Route} from 'react-router-dom';
+>>>>>>> master
 import AddBookmark from './AddBookmark/AddBookmark';
 import BookmarkList from './BookmarkList/BookmarkList';
 import BookmarksContext from './BookmarksContext';
@@ -9,7 +13,11 @@ import './App.css';
 
 class App extends Component {
   state = {
+<<<<<<< HEAD
     bookmarks : [],
+=======
+    bookmarks,
+>>>>>>> master
     error: null,
   };
 
@@ -54,6 +62,7 @@ class App extends Component {
   }
 
   render() {
+<<<<<<< HEAD
     
     const contextValue = {
             bookmarks: this.state.bookmarks,
@@ -79,6 +88,32 @@ class App extends Component {
           />
            </div>
        </BookmarksContext.Provider>
+=======
+    return (
+      <main className='App'>
+        <h1>Bookmarks!</h1>
+        <Nav />
+        <div className='content' aria-live='polite'>
+        
+          <Route
+            path='/add-bookmark'
+            render={({ history }) =>
+              <AddBookmark
+                onAddBookmark={this.addBookmark}
+                onClickCancel={() => history.goBack('/')}
+              />}
+          /> 
+          
+          <Route
+            exact
+            path='/'
+            render={() =>
+              <BookmarkList
+                bookmarks={bookmarks}
+              />}
+          />
+        </div>
+>>>>>>> master
       </main>
     );
   }
