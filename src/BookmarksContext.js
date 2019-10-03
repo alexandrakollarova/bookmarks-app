@@ -7,7 +7,8 @@ import React from 'react';
 const BookmarksContext = React.createContext({
     bookmarsk: [],
     addBookmark: () => {},
-    deleteBookmark: () => {}
+    deleteBookmark: () => {},
+    updateBookmark: () => {}
 })
 
 export default BookmarksContext

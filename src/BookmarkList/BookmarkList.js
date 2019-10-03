@@ -8,9 +8,21 @@ class BookmarkList extends Component {
 
   static contextType = BookmarksContext;
 
-  // static defaultProps = {
-  //   bookmarks: []
-  //   };
+  static proptTypes = {
+    bookmarks: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([
+          PropTypes.number,
+          PropTypes.string,
+        ]).isRequired,
+      })
+    )
+  };
+
+  static defaultProps = {
+    bookmarks: []
+  };
+
 
   render() {
     const { bookmarks } = this.context

@@ -1,20 +1,19 @@
 import React, { Component } from  'react';
 import BookmarksContext from '../BookmarksContext';
-// import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import config from '../config'
 import './AddBookmark.css';
 
-// class Required extends Component {
-//   render() { 
-//     return ( 
-//       <span className='AddBookmark__required'>*</span>
-//      );
-//   }
-// }
- 
-// export default Required;
+const Required = () => (
+  <span className='AddBookmark__required'>*</span>
+)  
 
 class AddBookmark extends Component {
+  static propTypes = {
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }).isRequired,
+  };
   
   static contextType = BookmarksContext;
 
@@ -86,7 +85,7 @@ class AddBookmark extends Component {
             <label htmlFor='title'>
               Title
               {' '}
-              {/* <Required /> */}
+              <Required />
             </label>
             <input
               type='text'
@@ -100,7 +99,7 @@ class AddBookmark extends Component {
             <label htmlFor='url'>
               URL
               {' '}
-              {/* <Required /> */}
+              <Required />
             </label>
             <input
               type='url'
@@ -123,7 +122,7 @@ class AddBookmark extends Component {
             <label htmlFor='rating'>
               Rating
               {' '}
-              {/* <Required /> */}
+              <Required />
             </label>
             <input
               type='number'
