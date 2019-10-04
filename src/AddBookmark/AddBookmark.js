@@ -29,7 +29,7 @@ class AddBookmark extends Component {
       title: title.value,
       url: url.value,
       description: description.value,
-      rating: rating.value,
+      rating: parseInt(rating.value),
     }
     this.setState({ error: null })
     fetch(config.API_ENDPOINT, {
@@ -56,11 +56,13 @@ class AddBookmark extends Component {
         description.value = ''
         rating.value = ''
 
-        this.props.history.push('/')
-        this.props.onAddBookmark(data)
+        this.props.history.push('/') 
+        //this.props.onAddBookmark(data)              
       })
       .catch(error => {
-        this.setState({ error })
+        this.setState({
+          error: error
+        })
       })
   }
 
